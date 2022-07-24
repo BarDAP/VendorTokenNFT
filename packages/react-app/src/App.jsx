@@ -931,16 +931,13 @@ function App(props) {
 
           <Route path="/yourtoken">
               <div style={{ padding: 8, marginTop: 32, width: 300, margin: "auto" }}>
-                <Card title="Your Tokens" extra={<a href="#">code</a>}>
+                <Card title="Your Tokens">{/* extra={<a href="#">code</a>} */}
                   <div style={{ padding: 8 }}>
                     <Balance balance={yourTokenBalance} fontSize={64} />
                   </div>
                 </Card>
-              </div>
-              {transferDisplay}
               <Divider />
-              <div style={{ padding: 8, marginTop: 32, width: 300, margin: "auto" }}>
-                <Card title="Buy Tokens" extra={<a href="#">code</a>}>
+                <Card title="Buy Tokens" >{/* extra={<a href="#">code</a>} */}
                   <div style={{ padding: 8 }}>{tokensPerEth && tokensPerEth.toNumber()} tokens per ETH</div>
                   <div style={{ padding: 8 }}>
                     <Input
@@ -974,13 +971,10 @@ function App(props) {
                     </Button>
                   </div>
                 </Card>
+
               </div>
 
-
-
-              Extra UI for buying the tokens back from the user using "approve" and "sellTokens"
-
-            <Divider />
+          {/*  buying the tokens back from the user using "approve" and "sellTokens" */}
             <div style={{ padding: 8, marginTop: 32, width: 300, margin: "auto" }}>
               <Card title="Sell Tokens">
                 <div style={{ padding: 8 }}>{tokensPerEth && tokensPerEth.toNumber()} tokens per ETH</div>
@@ -1083,7 +1077,9 @@ function App(props) {
                   }}
                 />
               </div>
-
+            <Divider />
+              {transferDisplay}
+              <Divider />
               {/*
 
                 🎛 this scaffolding is full of commonly used components
@@ -1177,6 +1173,15 @@ function App(props) {
           </Route> */}
           <Route path="/debugcontracts">
             <Contract
+              name="YourToken"
+              signer={userSigner}
+              provider={localProvider}
+              address={address}
+              blockExplorer={blockExplorer}
+              contractConfig={contractConfig}
+            />
+
+            <Contract
               name="YourCollectible"
               signer={userSigner}
               provider={localProvider}
@@ -1202,14 +1207,7 @@ function App(props) {
               blockExplorer={blockExplorer}
               contractConfig={contractConfig}
             />
-            <Contract
-              name="YourToken"
-              signer={userSigner}
-              provider={localProvider}
-              address={address}
-              blockExplorer={blockExplorer}
-              contractConfig={contractConfig}
-            />
+
           </Route>
         </Switch>
       </BrowserRouter>
