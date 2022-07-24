@@ -3,7 +3,7 @@
 NFT Minting dapp - Fungible Token as Coin is used to mint NFTs.
 
 - Vendor contract is used to buy your token (like a DEX).
-- Deployer pays around (100 Tokens) to mint NFT to the blockchain.
+- Deployer pays around (1 Tokens) to mint NFT to the blockchain.
 - You can transfer your NFTs to other accounts
 
 
@@ -25,6 +25,8 @@ yarn
 yarn upload
 
 ```
+> ✏️ You can edit the artwork manifest `artwork.js` with all of your art, then re-upload it to IPFS.
+
 
 > In another terminal install and start your 👷‍ Hardhat chain:
 
@@ -34,7 +36,7 @@ cd buyer-mints-nft
 yarn chain
 ```
 
-> In a third terminal (if needed), deploy all the things and start your 📱 frontend:
+> Go back to the first terminal, deploy all the things and start your 📱 frontend:
 
 ```bash
 
@@ -46,136 +48,25 @@ yarn start
 
 ---
 
-> ✏️ You can edit the artwork manifest `artwork.js` with all of your art, then re-upload it to IPFS:
+Your artwork from `artwork.json` (if uploaded and deployed correctly) should show a gallery of possible NFTs to mint:
+![image](https://user-images.githubusercontent.com/22189126/180664784-4548f697-5723-424d-be4c-963c6e6139d6.png)
 
-> in another terminal window:
+Use the YourToken tab and buy some tokens {token price is static (100YBC = 1ETH) }:
+![image](https://user-images.githubusercontent.com/22189126/180665807-dd178340-27bf-4101-bb4b-8d8e4d7a26fc.png)
 
+After buying some tokens you should see your token balance here:
+![image](https://user-images.githubusercontent.com/22189126/180664917-3aa9d1d4-9528-4e3c-8af7-b4f335203fcb.png)
 
-```bash
-cd buyer-mints-nft
+You can sell it back here:
 
-yarn upload
+![image](https://user-images.githubusercontent.com/22189126/180665465-02159f60-a25c-46f7-8c61-6a4d9c8becdb.png)
 
-yarn deploy
-
-```
-
----
-
-Your artwork from `artwork.json` (if uploaded and deployed correctly) should show a gallery of possible NFTS to mint:
-
-![image](https://user-images.githubusercontent.com/2653167/110538535-5fe87980-80e1-11eb-83aa-fe2b53f9c277.png)
-
-
-💦 Use the faucet wallet icon in the bottom left of the frontend to give your address **$1000** in testnet ETH.
-
-🎫 Try to "Mint" an NFT:
+Try to "Mint" an NFT:
 
 ![image](https://user-images.githubusercontent.com/2653167/110538992-ec933780-80e1-11eb-9d15-aaa7efea698d.png)
 
-
-👛 Open an *incognito* window and navigate to http://localhost:3000 (You'll notice it has a new wallet address).
-
-⛽️ Grab some gas for each account using the faucet:
-
-![image](https://user-images.githubusercontent.com/2653167/109543971-35b10f00-7a84-11eb-832e-36d6b66afbe7.png)
-
-🎟 Send an NFT to the *incognito* window just to make sure it works.
-
----
-
-🕵🏻‍♂️ Inspect the `Debug Contracts` tab to figure out what address is the `owner` of `YourCollectible`?
-
-💼 Edit your deployment script `deploy.js` in `packages/hardhat/scripts`
-
-🔏 Edit your smart contract `YourCollectible.sol` in `packages/hardhat/contracts`
-
-📝 Edit your frontend `App.jsx` in `packages/react-app/src`
+![image](https://user-images.githubusercontent.com/22189126/180665725-032a861f-265a-4957-a714-9e80ae889364.png)
 
 
-🔑 Create wallet links to your app with `yarn wallet` and `yarn fundedwallet`
-
-⬇️ Installing a new package to your frontend? You need to `cd packages/react-app` and then `yarn add PACKAGE`
-
-# 📡 Deploy NFT smart contract!
-
-🛰 Ready to deploy to a testnet?
-> Change the `defaultNetwork` in `packages/hardhat/hardhat.config.js`
-
-![nft6](https://user-images.githubusercontent.com/526558/124387061-7a0f1e80-dcb3-11eb-9f4c-19229f43adec.png)
-
-🔐 Generate a deploy account with `yarn generate`
-
-![nft7](https://user-images.githubusercontent.com/526558/124387064-7d0a0f00-dcb3-11eb-9d0c-195f93547fb9.png)
 
 
-👛 View your deployer address using `yarn account` (You'll need to fund this account. Hint: use an [instant wallet](https://instantwallet.io) to fund your account via QR code)
-
-![nft8](https://user-images.githubusercontent.com/526558/124387068-8004ff80-dcb3-11eb-9d0f-43fba2b3b791.png)
-
-📝 Triple check your `artwork.json` file and run:
-
-```bash
-
-yarn upload
-
-```
-
-👨‍🎤 Deploy your NFT smart contract:
-
-```bash
-
-yarn deploy
-
-```
----
----
-
-> ✏️ Edit your frontend `App.jsx` in `packages/react-app/src` to change the `targetNetwork` to wherever you deployed your contract:
-
-![nft9](https://user-images.githubusercontent.com/526558/124387095-9743ed00-dcb3-11eb-8ea5-afc25d7fef80.png)
-
-You should see the correct network in the frontend:
-
-![nft10](https://user-images.githubusercontent.com/526558/124387099-9a3edd80-dcb3-11eb-9a57-54a7d370589a.png)
-
-## ⚔️ Side Quests
-
-#### 🐟 Open Sea
-
-# ⚔️ Side Quests
-## 🐟 Open Sea
-> Add your contract to OpenSea ( create -> submit NFTs -> "or add an existing contract" )
-
-(It can take a while before they show up, but here is an example:)
-https://testnets.opensea.io/assets/0xc2839329166d3d004aaedb94dde4173651babccf/1
-## 🔍 Etherscan Contract Verification
-> run yarn flatten > flat.txt (You will need to clean up extra junk at the top and bottom of flat.txt. Sorry, rookie stuff here.)
-
----
-
-
-#### 🔍 Etherscan Contract Verification
-
-![nft12](https://user-images.githubusercontent.com/526558/124387153-c8bcb880-dcb3-11eb-8191-e53f87129b88.png)
-
-## 🔶 Infura
-> You will need to get a key from infura.io and paste it into constants.js in packages/react-app/src:
-
-![nft13](https://user-images.githubusercontent.com/526558/124387174-d83c0180-dcb3-11eb-989e-d58ba15d26db.png)
-
-# 🛳 Ship the app!
-> ⚙️ build and upload your frontend and share the url with your friends...
-
-```
-# build it:
-
-yarn build
-
-# upload it:
-
-yarn surge
-
-yarn s3
-
-===================================================== [⏫ back to the top ⏫](https://github.com/austintgriffith/scaffold-eth#-scaffold-eth)
