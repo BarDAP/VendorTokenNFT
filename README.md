@@ -1,25 +1,24 @@
-# 🏗 scaffold-eth - 🎫 Buyer Mints NFT
+# VendorTokenNFT
 
-> (Counterfactual NFT minting example...)
+NFT Minting dapp - Fungible Token as Coin is used to mint NFTs.
 
-Deployer pays around (0.283719 ETH ~$500 at todays gas and price) for the initial contract but then NFTs are only minted once a buyer wants them. (The buyer of the NFT pays the gas to mint. ~$55)
+- Vendor contract is used to buy your token (like a DEX).
+- Deployer pays around (100 Tokens) to mint NFT to the blockchain.
+- You can transfer your NFTs to other accounts
+
 
 # 🏃‍♀️ Quick Start
 Required: [Git](https://git-scm.com/downloads), [Node](https://nodejs.org/dist/latest-v12.x/), [Yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable) and [Hardhat](https://hardhat.org/getting-started/#installation).
 
-> clone/fork 🏗 scaffold-eth and get setup:
-
+> Open a new folder and run:
 ```bash
-git clone https://github.com/austintgriffith/scaffold-eth.git buyer-mints-nft
 
-cd buyer-mints-nft
-
-git checkout buyer-mints-nft
+git clone https://github.com/austintgriffith/scaffold-eth.git
 
 yarn
 ```
 
-> upload the default art to IPFS:
+> Upload the default art (artwork.json) to IPFS:
 
 ```bash
 
@@ -27,7 +26,7 @@ yarn upload
 
 ```
 
-> install and start your 👷‍ Hardhat chain in another terminal:
+> In another terminal install and start your 👷‍ Hardhat chain:
 
 ```bash
 cd buyer-mints-nft
@@ -35,10 +34,9 @@ cd buyer-mints-nft
 yarn chain
 ```
 
-> in a third terminal window, deploy all the things and start your 📱 frontend:
+> In a third terminal (if needed), deploy all the things and start your 📱 frontend:
 
 ```bash
-cd buyer-mints-nft
 
 yarn deploy
 
