@@ -49,23 +49,32 @@ yarn start
 ---
 
 Your artwork from `artwork.json` (if uploaded and deployed correctly) should show a gallery of possible NFTs to mint:
+
 ![image](https://user-images.githubusercontent.com/22189126/180664784-4548f697-5723-424d-be4c-963c6e6139d6.png)
 
+Add your token to metamask by copying it from here:
+![image](https://user-images.githubusercontent.com/22189126/180666563-9e40d072-6a2f-418b-90ec-59fd92485533.png)
+
 Use the YourToken tab and buy some tokens {token price is static (100YBC = 1ETH) }:
+
 ![image](https://user-images.githubusercontent.com/22189126/180665807-dd178340-27bf-4101-bb4b-8d8e4d7a26fc.png)
 
 After buying some tokens you should see your token balance here:
+
 ![image](https://user-images.githubusercontent.com/22189126/180664917-3aa9d1d4-9528-4e3c-8af7-b4f335203fcb.png)
 
 You can sell it back here:
 
 ![image](https://user-images.githubusercontent.com/22189126/180665465-02159f60-a25c-46f7-8c61-6a4d9c8becdb.png)
 
-Try to "Mint" an NFT:
+Try to "Mint" an NFT minting costs 1YBC:
 
 ![image](https://user-images.githubusercontent.com/2653167/110538992-ec933780-80e1-11eb-9d15-aaa7efea698d.png)
 
-![image](https://user-images.githubusercontent.com/22189126/180665725-032a861f-265a-4957-a714-9e80ae889364.png)
+If you want you can transfer your nft to other address:
+
+![image](https://user-images.githubusercontent.com/22189126/180666248-52e4242d-0634-435c-921d-5cec053e9b25.png)
+
 
 
 
