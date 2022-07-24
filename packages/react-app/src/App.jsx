@@ -15,7 +15,7 @@ import StackGrid from "react-stack-grid";
 import Web3Modal from "web3modal";
 import "./App.css";
 import assets from "./assets.js";
-import { Account, Address, AddressInput, Balance, Contract, Faucet, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
+import { Account, Address, AddressInput, Balance, Contract, GasGauge, Header, Ramp, ThemeSwitch } from "./components";
 import { INFURA_ID, NETWORK, NETWORKS } from "./constants";
 import { Transactor } from "./helpers";
 import {
@@ -261,9 +261,6 @@ function App(props) {
 
   // The transactor wraps transactions and provides notificiations
   const tx = Transactor(userSigner, gasPrice);
-
-  // Faucet Tx can be used to send funds from the faucet
-  const faucetTx = Transactor(localProvider, gasPrice);
 
   // 🏗 scaffold-eth is full of handy hooks like this one to get your balance:
   const yourLocalBalance = useBalance(localProvider, address);
@@ -546,37 +543,6 @@ function App(props) {
     setRoute(window.location.pathname);
   }, [setRoute]);
 
-  let faucetHint = "";
-  const faucetAvailable = localProvider && localProvider.connection && targetNetwork.name.indexOf("local") !== -1;
-
-  const [faucetClicked, setFaucetClicked] = useState(false);
-  if (
-    !faucetClicked &&
-    localProvider &&
-    localProvider._network &&
-    localProvider._network.chainId === 31337 &&
-    yourLocalBalance &&
-    ethers.utils.formatEther(yourLocalBalance) <= 0
-  ) {
-    faucetHint = (
-      <div style={{ padding: 16 }}>
-        <Button
-          type="primary"
-          onClick={() => {
-            faucetTx({
-              to: address,
-              // value: ethers.utils.parseEther("1"),// vendor app.jsx
-              value: ethers.utils.parseEther("0.01"),
-            });
-            setFaucetClicked(true);
-          }}
-        >
-          💰 Grab funds from the faucet ⛽️
-        </Button>
-      </div>
-    );
-  }
-
   const buyTokensEvents = useEventListener(readContracts, "Vendor", "BuyTokens", localProvider, 1);
   console.log("📟 buyTokensEvents:", buyTokensEvents);
 
@@ -749,16 +715,6 @@ function App(props) {
           >
             Mint
           </Button>
-          {/* <Button
-            onClick={() => {
-              console.log("gasPrice,", gasPrice);
-              // await tx(writeContracts.YourToken.approve(readContracts.YourCollectible.address, 1000000000000000000));
-              tx(writeContracts.YourToken.approve(readContracts.YourCollectible.address, ethers.utils.parseEther("1")));
-              // tx(writeContracts.YourCollectible.mintItem(loadedAssets[a].id, { gasPrice }));
-            }}
-          >
-            Approve
-          </Button> */}
         </div>,
       );
     } else {
@@ -1260,7 +1216,7 @@ function App(props) {
 
       <ThemeSwitch />
 
-      {/* 👨‍💼 Your account is in the top right with a wallet at connect options */}
+      👨‍💼 Your account is in the top right with a wallet at connect options
       <div style={{ position: "fixed", textAlign: "right", right: 0, top: 0, padding: 10 }}>
         <Account
           address={address}
@@ -1273,50 +1229,14 @@ function App(props) {
           logoutOfWeb3Modal={logoutOfWeb3Modal}
           blockExplorer={blockExplorer}
         />
-        {faucetHint}
       </div>
 
-      {/* 🗺 Extra UI like gas price, eth price, faucet, and support: */}
-      <div style={{ position: "fixed", textAlign: "left", left: 0, bottom: 20, padding: 10 }}>
-        <Row align="middle" gutter={[4, 4]}>
-          <Col span={8}>
-            <Ramp price={price} address={address} networks={NETWORKS} />
-          </Col>
-
-          <Col span={8} style={{ textAlign: "center", opacity: 0.8 }}>
-            <GasGauge gasPrice={gasPrice} />
-          </Col>
-          <Col span={8} style={{ textAlign: "center", opacity: 1 }}>
-            <Button
-              onClick={() => {
-                window.open("https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA");
-              }}
-              size="large"
-              shape="round"
-            >
-              <span style={{ marginRight: 8 }} role="img" aria-label="support">
-                💬
-              </span>
-              Support
-            </Button>
-          </Col>
-        </Row>
-
-        <Row align="middle" gutter={[4, 4]}>
-          <Col span={24}>
-            {
-              /*  if the local provider has a signer, let's show the faucet:  */
-              faucetAvailable ? (
-                <Faucet localProvider={localProvider} price={price} ensProvider={mainnetProvider} />
-              ) : (
-                ""
-              )
-            }
-          </Col>
-        </Row>
-      </div>
+     
     </div>
   );
 }
 
 export default App;
+
+
+
