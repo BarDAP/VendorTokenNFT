@@ -804,7 +804,7 @@ function App(props) {
               YourToken
             </Link>
           </Menu.Item>
-          <Menu.Item key="/ipfsup">
+          {/* <Menu.Item key="/ipfsup">
             <Link
               onClick={() => {
                 setRoute("/ipfsup");
@@ -823,7 +823,7 @@ function App(props) {
             >
               IPFS Download
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key="/debugcontracts">
             <Link
               onClick={() => {
@@ -978,7 +978,7 @@ function App(props) {
 
 
 
-              {/*Extra UI for buying the tokens back from the user using "approve" and "sellTokens"
+              Extra UI for buying the tokens back from the user using "approve" and "sellTokens"
 
             <Divider />
             <div style={{ padding: 8, marginTop: 32, width: 300, margin: "auto" }}>
@@ -1055,7 +1055,7 @@ function App(props) {
 
               </Card>
             </div>
-            */}
+           
               <div style={{ padding: 8, marginTop: 32 }}>
                 <div>Vendor Token Balance:</div>
                 <Balance balance={vendorTokenBalance} fontSize={64} />
@@ -1101,7 +1101,7 @@ function App(props) {
             */}
           </Route>
 
-          <Route path="/ipfsup">
+          {/* <Route path="/ipfsup">
             <div style={{ paddingTop: 32, width: 740, margin: "auto", textAlign: "left" }}>
               <ReactJson
                 style={{ padding: 8 }}
@@ -1174,7 +1174,7 @@ function App(props) {
             </Button>
 
             <pre style={{ padding: 16, width: 500, margin: "auto", paddingBottom: 150 }}>{ipfsContent}</pre>
-          </Route>
+          </Route> */}
           <Route path="/debugcontracts">
             <Contract
               name="YourCollectible"

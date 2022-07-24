@@ -31,7 +31,7 @@ contract YourCollectible is ERC721URIStorage {
 
         //make sure they are only minting something that is marked "forsale"
         require(forSale[uriHash],"NOT FOR SALE");
-        require(yourToken.balanceOf(msg.sender)>0, "my!!!!Insufficient token balance");
+        require(yourToken.balanceOf(msg.sender)>0, "Insufficient token balance");
         // yourToken.approve(address(this), 1000000000000000000);
 	      yourToken.transferFrom(msg.sender,address(this),1 * 10 ** 18);
 	      // yourToken.transfer(address(this),1000000000000000000);
