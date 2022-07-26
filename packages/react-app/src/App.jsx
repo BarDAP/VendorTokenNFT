@@ -416,7 +416,7 @@ function App(props) {
       writeContracts &&
       mainnetContracts
     ) {
-      console.log("_____________________________________ 🏗 scaffold-eth _____________________________________");
+      console.log("_____________________________________ 🏗 _____________________________________");
       console.log("🌎 mainnetProvider", mainnetProvider);
       console.log("🏠 localChainId", localChainId);
       console.log("👩‍💼 selected address:", address);
