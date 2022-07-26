@@ -47,8 +47,8 @@ const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
 const ipfsAPI = require("ipfs-http-client");
 
-// const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
-const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "http" });
+const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
+// const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "http" });
 console.log("📦 Assets: ", assets);
 /*
     You should get your own Infura.io ID and put it in `constants.js`
