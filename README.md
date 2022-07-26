@@ -50,7 +50,7 @@ yarn start
 
 Your artwork from `artwork.json` (if uploaded and deployed correctly) should show a gallery of possible NFTs to mint:
 
-![image](https://user-images.githubusercontent.com/22189126/180664784-4548f697-5723-424d-be4c-963c6e6139d6.png)
+![image](https://user-images.githubusercontent.com/22189126/181051065-eba932dd-b0f4-436e-ac8e-f782718f34b3.png)
 
 Add your token to metamask by copying it from here:
 ![image](https://user-images.githubusercontent.com/22189126/180666563-9e40d072-6a2f-418b-90ec-59fd92485533.png)
@@ -69,7 +69,7 @@ You can sell it back here:
 
 Try to "Mint" an NFT minting costs 1YBC:
 
-![image](https://user-images.githubusercontent.com/2653167/110538992-ec933780-80e1-11eb-9d15-aaa7efea698d.png)
+![image](https://user-images.githubusercontent.com/22189126/181051275-6757ba41-05bf-40ac-a6a7-51e3a76e6e4f.png)
 
 If you want you can transfer your nft to other address:
 
