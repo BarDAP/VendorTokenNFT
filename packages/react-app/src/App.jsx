@@ -38,6 +38,7 @@ import Authereum from "authereum";
 // contracts
 import externalContracts from "./contracts/external_contracts";
 import deployedContracts from "./contracts/hardhat_contracts.json";
+import create from "@ant-design/icons/lib/components/IconFont";
 
 
 const { ethers } = require("ethers");
@@ -47,7 +48,7 @@ const { BufferList } = require("bl");
 const ipfsAPI = require("ipfs-http-client");
 
 // const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
-const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "https" });
+const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "http" });
 
 console.log("📦 Assets: ", assets);
 /*
@@ -384,7 +385,8 @@ function App(props) {
           try {
             const jsonManifest = JSON.parse(jsonManifestBuffer.toString());
             console.log("jsonManifest", jsonManifest);
-            collectibleUpdate.push({ id: tokenId, uri: tokenURI, owner: address, ...jsonManifest });
+            // collectibleUpdate.push({ id: tokenId, uri: tokenURI, owner: address, ...jsonManifest });
+            collectibleUpdate.push({ id: tokenId, uri: tokenURI, owner: address, image: jsonManifest.image });
           } catch (e) {
             console.log(e);
           }
