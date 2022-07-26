@@ -5,9 +5,9 @@ const { config, ethers } = require("hardhat");
 const { utils } = require("ethers");
 const R = require("ramda");
 const ipfsAPI = require('ipfs-http-client');
-// const ipfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
-const ipfs = ipfsAPI({host: 'localhost', port: '5001', protocol: 'http' })
-const DELAY = 3000;
+const ipfs = ipfsAPI({host: 'ipfs.infura.io', port: '5001', protocol: 'https' })
+// const ipfs = ipfsAPI({host: 'localhost', port: '5001', protocol: 'http' })
+const DELAY = 5000;
 
 function timeout(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
