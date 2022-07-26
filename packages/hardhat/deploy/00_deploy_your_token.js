@@ -16,10 +16,10 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
 
   const yourToken = await ethers.getContract("YourToken", deployer);
 
-  // Todo: transfer tokens to frontend address
+  //  transfer tokens to frontend address
   // const result = await yourToken.transfer("0x18fFE4dADcCe63A074Ef9cfe327cAb9AD4Ad9f76", ethers.utils.parseEther("1000") );
 
-  // ToDo: To take ownership of yourContract using the ownable library uncomment next line and add the
+  // To take ownership of yourContract using the ownable library uncomment next line and add the
   // address you want to be the owner.
   // yourContract.transferOwnership(YOUR_ADDRESS_HERE);
 
@@ -43,7 +43,7 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
   //  LibraryName: **LibraryAddress**
   // });
 
-  // ToDo: Verify your contract with Etherscan for public chains
+  // Verify your contract with Etherscan for public chains
   // if (chainId !== "31337") {
   //   try {
   //     console.log(" 🎫 Verifing Contract on Etherscan... ");

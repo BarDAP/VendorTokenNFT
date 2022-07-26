@@ -49,11 +49,8 @@ const ipfsAPI = require("ipfs-http-client");
 
 // const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
 const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "http" });
-
 console.log("📦 Assets: ", assets);
 /*
-    Welcome 
-
     You should get your own Infura.io ID and put it in `constants.js`
     (this is your connection to the main Ethereum network for ENS etc.)
 
