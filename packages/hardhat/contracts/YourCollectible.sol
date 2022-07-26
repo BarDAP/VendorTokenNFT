@@ -24,9 +24,9 @@ contract YourCollectible is ERC721URIStorage {
         }
     }
 
-    //function _baseURI() internal pure override returns (string memory) {
-    //  return "https://ipfs.io/ipfs/";
-    //}
+    function _baseURI() internal pure override returns (string memory) {
+     return "https://ipfs.io/ipfs/";
+    }
 	
     //this marks an item in IPFS as "forsale"
     mapping (bytes32 => bool) public forSale;

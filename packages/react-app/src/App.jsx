@@ -46,22 +46,15 @@ const { BufferList } = require("bl");
 // https://www.npmjs.com/package/ipfs-http-client
 const ipfsAPI = require("ipfs-http-client");
 
-const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
+// const ipfs = ipfsAPI({ host: "ipfs.infura.io", port: "5001", protocol: "https" });
+const ipfs = ipfsAPI({ host: "localhost", port: "5001", protocol: "https" });
 
 console.log("📦 Assets: ", assets);
 /*
-    Welcome to 🏗 scaffold-eth !
-
-    Code:
-    https://github.com/austintgriffith/scaffold-eth
-
-    Support:
-    https://t.me/joinchat/KByvmRe5wkR-8F_zz6AjpA
-    or DM @austingriffith on twitter or telegram
+    Welcome 
 
     You should get your own Infura.io ID and put it in `constants.js`
     (this is your connection to the main Ethereum network for ENS etc.)
-
 
     🌏 EXTERNAL CONTRACTS:
     You can also bring in contract artifacts in `constants.js`
@@ -77,20 +70,43 @@ const NETWORKCHECK = true;
 
 // EXAMPLE STARTING JSON:
 const STARTING_JSON = {
-  description: "It's actually a bison?",
-  external_url: "https://austingriffith.com/portfolio/paintings/", // <-- this can link to a page for the specific file too
-  image: "https://austingriffith.com/images/paintings/buffalo.jpg",
-  name: "Buffalo",
-  attributes: [
+  "name": "Cryptopunks#0",
+  "description": "Crypto Punks",
+  "image": "https://i.im.ge/2022/07/25/FL3i3T.png",
+  "attributes": [
     {
-      trait_type: "BackgroundColor",
-      value: "green",
+      "trait_type": "face",
+      "value": "face1"
     },
     {
-      trait_type: "Eyes",
-      value: "googly",
+      "trait_type": "ears",
+      "value": "ears3"
     },
-  ],
+    {
+      "trait_type": "eyes",
+      "value": "eyes3"
+    },
+    {
+      "trait_type": "hair",
+      "value": "hair11"
+    },
+    {
+      "trait_type": "nose",
+      "value": "n1"
+    },
+    {
+      "trait_type": "mouth",
+      "value": "m6"
+    },
+    {
+      "trait_type": "beard",
+      "value": "beard6"
+    },
+    {
+      "trait_type": "access",
+      "value": "acc1"
+    }
+  ]
 };
 
 // helper function to "Get" from IPFS
@@ -108,7 +124,7 @@ const getFromIPFS = async hashToGet => {
   }
 };
 
-// 🛰 providers
+// providers
 if (DEBUG) console.log("📡 Connecting to Mainnet Ethereum");
 // const mainnetProvider = getDefaultProvider("mainnet", { infura: INFURA_ID, etherscan: ETHERSCAN_KEY, quorum: 1 });
 // const mainnetProvider = new InfuraProvider("mainnet",INFURA_ID);
@@ -739,14 +755,14 @@ function App(props) {
         title={
           <div>
             {loadedAssets[a].name}{" "}
-            <a
+{/*             <a
               style={{ cursor: "pointer", opacity: 0.33 }}
               href={loadedAssets[a].external_url}
               target="_blank"
               rel="noreferrer"
             >
               <LinkOutlined />
-            </a>
+            </a> */}
           </div>
         }
       >
@@ -804,7 +820,7 @@ function App(props) {
               YourToken
             </Link>
           </Menu.Item>
-          {/* <Menu.Item key="/ipfsup">
+          <Menu.Item key="/ipfsup">
             <Link
               onClick={() => {
                 setRoute("/ipfsup");
@@ -823,7 +839,7 @@ function App(props) {
             >
               IPFS Download
             </Link>
-          </Menu.Item> */}
+          </Menu.Item>
           <Menu.Item key="/debugcontracts">
             <Link
               onClick={() => {
@@ -1080,24 +1096,24 @@ function App(props) {
             <Divider />
               {transferDisplay}
               <Divider />
-              {/*
+        
 
-                🎛 this scaffolding is full of commonly used components
+       {/*          🎛 this scaffolding is full of commonly used components
                 this <Contract/> component will automatically parse your ABI
-                and give you a form to interact with it locally
+                and give you a form to interact with it locally */}
 
             <Contract
-              name="YourContract"
+              name="Vendor"
               signer={userSigner}
               provider={localProvider}
               address={address}
               blockExplorer={blockExplorer}
               contractConfig={contractConfig}
             />
-            */}
+            
           </Route>
 
-          {/* <Route path="/ipfsup">
+           <Route path="/ipfsup">
             <div style={{ paddingTop: 32, width: 740, margin: "auto", textAlign: "left" }}>
               <ReactJson
                 style={{ padding: 8 }}
@@ -1170,7 +1186,7 @@ function App(props) {
             </Button>
 
             <pre style={{ padding: 16, width: 500, margin: "auto", paddingBottom: 150 }}>{ipfsContent}</pre>
-          </Route> */}
+          </Route>
           <Route path="/debugcontracts">
             <Contract
               name="YourToken"

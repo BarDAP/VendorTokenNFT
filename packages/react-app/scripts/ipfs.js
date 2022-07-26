@@ -4,14 +4,18 @@ const { clearLine } = require("readline");
 
 const { globSource } = ipfsAPI;
 
-const infura = { host: "ipfs.infura.io", port: "5001", protocol: "https" };
+// const infura = { host: "ipfs.infura.io", port: "5001", protocol: "https" };
 // run your own ipfs daemon: https://docs.ipfs.io/how-to/command-line-quick-start/#install-ipfs
-// const localhost = { host: "localhost", port: "5001", protocol: "http" };
+const localhost = { host: "localhost", port: "5001", protocol: "http" };
 
-const ipfs = ipfsAPI(infura);
+// const ipfs = ipfsAPI(infura);
+const ipfs = ipfsAPI(localhost);
 
-const ipfsGateway = "https://ipfs.io/ipfs/";
-const ipnsGateway = "https://ipfs.io/ipns/";
+// const ipfsGateway = "http://ipfs.io/ipfs/";
+// const ipnsGateway = "https://ipfs.io/ipns/";
+
+const ipfsGateway = "http://ipfs.io/ipfs/";
+const ipnsGateway = "http://ipfs.io/ipfs/";
 
 const addOptions = {
   pin: true,
@@ -39,6 +43,9 @@ const nodeMayAllowPublish = ipfsClient => {
   // You must have your own IPFS node in order to publish an IPNS name
   // This contains a blacklist of known nodes which do not allow users to publish IPNS names.
   const nonPublishingNodes = ["ipfs.infura.io"];
+// const nonPublishingNodes = ["localhost"];
+
+
   const { host } = ipfsClient.getEndpointConfig();
   return !nonPublishingNodes.some(nodeUrl => host.includes(nodeUrl));
 };
